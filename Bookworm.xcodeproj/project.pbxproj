@@ -11,6 +11,8 @@
 		3A45CC062C68E0BE0031FD60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A45CC052C68E0BE0031FD60 /* ContentView.swift */; };
 		3A45CC082C68E0C00031FD60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A45CC072C68E0C00031FD60 /* Assets.xcassets */; };
 		3A45CC0B2C68E0C00031FD60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A45CC0A2C68E0C00031FD60 /* Preview Assets.xcassets */; };
+		3A45CC142C691A4F0031FD60 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A45CC132C691A4F0031FD60 /* Book.swift */; };
+		3A45CC162C691CAC0031FD60 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A45CC152C691CAC0031FD60 /* AddBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		3A45CC052C68E0BE0031FD60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A45CC072C68E0C00031FD60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A45CC0A2C68E0C00031FD60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A45CC132C691A4F0031FD60 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		3A45CC152C691CAC0031FD60 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				3A45CC032C68E0BE0031FD60 /* BookwormApp.swift */,
 				3A45CC052C68E0BE0031FD60 /* ContentView.swift */,
+				3A45CC132C691A4F0031FD60 /* Book.swift */,
+				3A45CC152C691CAC0031FD60 /* AddBookView.swift */,
 				3A45CC072C68E0C00031FD60 /* Assets.xcassets */,
 				3A45CC092C68E0C00031FD60 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				3A45CC062C68E0BE0031FD60 /* ContentView.swift in Sources */,
 				3A45CC042C68E0BE0031FD60 /* BookwormApp.swift in Sources */,
+				3A45CC142C691A4F0031FD60 /* Book.swift in Sources */,
+				3A45CC162C691CAC0031FD60 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
