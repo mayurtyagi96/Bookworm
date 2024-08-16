@@ -11,7 +11,7 @@ struct DetailView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     @State private var showDeleteAlert = false
-    let book: Book
+    var book: Book
     
     var body: some View {
         ScrollView{
@@ -33,6 +33,9 @@ struct DetailView: View {
             Text(book.author)
                 .font(.title)
                 .foregroundStyle(.secondary)
+            
+            Text(book.date.formatted(date: .abbreviated, time: .omitted))
+            
             
             Text(book.review)
                 .padding()

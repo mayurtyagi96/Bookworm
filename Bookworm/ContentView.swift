@@ -11,7 +11,8 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: [
         SortDescriptor(\Book.name),
-        SortDescriptor(\Book.author)
+        SortDescriptor(\Book.author),
+        SortDescriptor(\Book.rating, order: .reverse)
     ]) var books: [Book]
     @State private var showAddBookView = false
     
@@ -26,6 +27,7 @@ struct ContentView: View {
                             VStack(alignment: .leading){
                                 Text(book.name)
                                     .font(.headline)
+                                    .foregroundStyle(book.rating == 1 ? .red : .primary)
                                 
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
