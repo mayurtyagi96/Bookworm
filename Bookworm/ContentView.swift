@@ -8,24 +8,57 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @Query var books: [Book]
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: [
+        SortDescriptor(\Book.name),
+        SortDescriptor(\Book.author)
+    ]) var books: [Book]
     @State private var showAddBookView = false
     
     var body: some View {
         NavigationStack{
-            Text("No. of books \(books.count)")
-                .sheet(isPresented: $showAddBookView, content: {
-                    AddBookView()
-                })
-                .navigationTitle("Bookworm")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add", systemImage: "plus"){
-                            showAddBookView = true
+            List(){
+                ForEach(books){ book in
+                    NavigationLink(value: book) {
+                        HStack(){
+                            EmojiRatingView(rating: book.rating)
+                                .font(.largeTitle)
+                            VStack(alignment: .leading){
+                                Text(book.name)
+                                    .font(.headline)
+                                
+                                Text(book.author)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
                 }
+                .onDelete(perform: deleteBook)
+            }
+            .sheet(isPresented: $showAddBookView, content: {
+                AddBookView()
+            })
+            .navigationTitle("Bookworm")
+            .navigationDestination(for: Book.self) { book in
+                DetailView(book: book)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add", systemImage: "plus"){
+                        showAddBookView = true
+                    }
+                }
+            }
         }
+    }
+    func deleteBook(for indices: IndexSet){
+        for index in indices{
+            modelContext.delete(books[index])
+        }
+        
     }
 }
 
